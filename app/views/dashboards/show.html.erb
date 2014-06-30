@@ -1,4 +1,4 @@
-<%= current_user.email %>
+<%= link_to current_user.email, current_user %>
 <%= form_for @shout do |form| %>
   <%= form.text_area :body, placeholder: "Compose new shout" %>  
   <%= form.submit "Shout!" %>
