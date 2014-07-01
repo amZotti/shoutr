@@ -1,6 +1,8 @@
 require "monban/constraints/signed_in"
 
 Rails.application.routes.draw do
+
+  resource :followers, only: [:show]
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create, :show] do
     resource :following_relationship, only: [:create, :destroy]
