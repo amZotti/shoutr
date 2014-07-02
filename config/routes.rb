@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resource :followers, only: [:show]
   resource :session, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create, :show] do
+  resources :users, only: [:new, :create] do
     resource :following_relationship, only: [:create, :destroy]
   end
   resources :text_subjects, only: [:create]
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   constraints Monban::Constraints::SignedIn.new do
     get "/", to: "dashboards#show", as: :dashboard
     resource :following, only: ["show"]
+    get "/:username", to: "users#show", as: :user
   end
 
   root to: "sessions#new"
