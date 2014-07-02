@@ -1,7 +1,15 @@
 <%= link_to current_user.email, current_user %>
+
 <%= link_to "Followering", :following %>
 <%= link_to "Followers", :followers %>
-<%= form_for @shout do |form| %>
+
+<%= form_for @text_subject do |form| %>
   <%= form.text_area :body, placeholder: "Compose new shout" %>  
   <%= form.submit "Shout!" %>
 <% end %>
+
+<div>
+  <ul>
+    <%= render @shouts %>
+  </ul>
+</div>

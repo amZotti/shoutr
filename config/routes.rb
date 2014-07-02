@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show] do
     resource :following_relationship, only: [:create, :destroy]
   end
-  resources :shouts, only: [:create]
+  resources :text_subjects, only: [:create]
+  resources :shouts, only: [:create, :show]
 
   constraints Monban::Constraints::SignedIn.new do
     get "/", to: "dashboards#show", as: :dashboard

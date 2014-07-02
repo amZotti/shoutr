@@ -1,6 +1,8 @@
-<%= @user.email %>
-<%= render "follow_button", user:@user %>
+<div>
+  <%= @user.email %>
+  <%= render "follow_button", user:@user %>
 
-<ul>
-  <%= render @shouts %>
-</ul>
+  <ul>
+    <%= render @shouts %>
+  </ul>
+</div>
