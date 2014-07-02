@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resource :following_relationship, only: [:create, :destroy]
   end
   resources :text_subjects, only: [:create]
+  resources :image_subjects, only: [:create]
   resources :shouts, only: [:create, :show]
 
   constraints Monban::Constraints::SignedIn.new do
