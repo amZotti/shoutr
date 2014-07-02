@@ -1,6 +1,6 @@
 class DashboardsController < ApplicationController
   def show
-    @shouts = Shout.all
     @text_subject = TextSubject.new
+    @shouts = current_user.timeline
   end
 end

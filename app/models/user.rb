@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   has_many :followed_users, through: :followed_user_relationships
 
+
   has_many :follower_relationships,
     class_name: "FollowingRelationship",
     foreign_key: :followed_user_id
@@ -21,5 +22,9 @@ class User < ActiveRecord::Base
 
   def following?(user)
     followed_user_ids.include?(user.id)
+  end
+
+  def timeline
+    (Shout.where(user_id: followed_users + [self])).sort_by(&:created_at).reverse 
   end
 end
