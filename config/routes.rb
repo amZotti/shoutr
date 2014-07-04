@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     get "/", to: "dashboards#show", as: :dashboard
     resource :following, only: ["show"]
     get "/:username", to: "users#show", as: :user
+    post "/", to: "search#show"
+    
   end
 
   root to: "sessions#new"

@@ -19,3 +19,11 @@
   </ul>
   <%= paginate @shouts%>
 </div>
+<h3><%= flash[:error]  unless flash[:error].blank? %></h3> 
+<%= form_for :search do |form| %>
+  <%= form.text_area :username, placeholder: "Search for a username" %>
+  <%= form.submit "Submit" %>
+<% end %>
+
+
+
