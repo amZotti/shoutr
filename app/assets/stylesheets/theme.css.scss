@@ -1,6 +1,7 @@
 .container {
   @include outer-container;
   background: #D5EEFB;
+  height: 100vh;
 }
 
 .authentication {
@@ -12,15 +13,16 @@
 }
 
 .search {
-  @include span-columns(3);
-  input[type="submit"] {
-    @include span-columns(1);
+  #username-search {
+    @include span-columns(3);
+    border-radius: 50px;
+    height: 30px ;
+    display: inline-block;
   }
-}
 
-#username-search {
-  border-radius: 50px;
-  height: 30px ;
+  input[type="submit"] {
+    @include span-columns(2);
+  }
 }
 
 .form-container {
@@ -52,6 +54,7 @@
     @include span_columns(3);
     @include shift(4);
   }
+
   #authentication-button {
     @include span_columns(3);
     @include shift(5);
@@ -60,6 +63,7 @@
 
 .user-display {
   @include outer-container;
+
   .header, .user-content {
     @include span_columns(6);
     @include shift(5);
