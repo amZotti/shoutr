@@ -1,8 +1,9 @@
-<div>
-  <%= @user.username %>
-  <%= render "follow_button", user:@user %>
-
-  <ul>
-    <%= render @shouts %>
-  </ul>
+<div class="user-display">
+  <div class="user-content">
+    <h1><%= @user.username %></h1>
+    <%= render "follow_button", user:@user %>
+    <ul>
+      <%= render @shouts %>
+    </ul>
+  </div>
 </div>

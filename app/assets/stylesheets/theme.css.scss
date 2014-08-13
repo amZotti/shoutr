@@ -1,5 +1,6 @@
 .container {
   @include outer-container;
+  background: #D5EEFB;
 }
 
 .authentication {
@@ -31,7 +32,7 @@
 
 .dashboard-container {
   background: #D5EEFB;
-  
+
   .dashboard {
     @include span_columns(8);
     @include shift(5);
@@ -52,8 +53,15 @@
     @include shift(4);
   }
   #authentication-button {
-   @include span_columns(3);
-   @include shift(5);
+    @include span_columns(3);
+    @include shift(5);
   }
 }
 
+.user-display {
+  @include outer-container;
+  .header, .user-content {
+    @include span_columns(6);
+    @include shift(5);
+  }
+}
