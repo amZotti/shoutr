@@ -1,0 +1,54 @@
+.container {
+  @include outer-container;
+}
+
+.authentication {
+  @include span-columns(3);
+}
+
+.links {
+  @include span-columns(3);
+}
+
+.search {
+  @include span-columns(3);
+  input[type="submit"] {
+    @include span-columns(1);
+  }
+}
+
+#username-search {
+  border-radius: 50px;
+  height: 30px ;
+}
+
+.form-container {
+  .form-content {
+    margin-top: 50px;
+    @include span_columns(6);
+  }
+}
+
+.dashboard-container {
+  background: #D5EEFB;
+  
+  .dashboard {
+    @include span_columns(8);
+    @include shift(5);
+    margin-top: 50px;
+  }
+}
+
+.authentication-form {
+  @include outer-container;
+  background: #D5EEFB;
+
+  .authentication-element {
+    @include span_columns(3);
+    @include shift(4);
+  }
+  .authentication-button {
+   @include span_columns(3);
+   @include shift(5);
+  }
+}

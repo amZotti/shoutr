@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Shoutr</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+<title>Shoutr</title>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
 </head>
 <body>
+
 <% if signed_in? %>
-  <%= "Signed in as: #{current_user.email}" %>
-  <%= link_to "sign out", :session, method: :delete %>
+  <div class="container">
+  <div class="authentication">
+    Signed in as: <%= current_user.email %>
+    <%= link_to "sign out", :session, method: :delete %>
+  </div>
+
+  <div class="links">
+    <%= link_to current_user.username, current_user %>
+    <%= link_to "Followering", :following %>
+    <%= link_to "Followers", :followers %>
+  </div>
+
+  <div class="search">
+    <h3><%= flash[:error]  unless flash[:error].blank? %></h3> 
+    <%= form_for :search do |form| %>
+      <%= form.text_area :username, id: "username-search", placeholder: "Search for a username" %>
+    <span class="search-button"><%= form.submit "Search!" %></span>
+  <% end %>
+  </div>
+
 <% else %>
   <%= link_to "sign in", root_path %>
   <%= link_to "sign up", sign_up_path %>
 <% end %>
 
-<%= yield %>
+  <%= yield %>
+</div>
 
 </body>
 </html>

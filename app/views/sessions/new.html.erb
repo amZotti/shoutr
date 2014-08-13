@@ -1,14 +1,15 @@
-<%= form_for :session, url: session_path do |form| %>
-  
-  <div>
+<div class="authentication-form">
+  <%= form_for :session, url: session_path do |form| %>  
+    <div class="authentication-element">
     <%= form.label :email %>
     <%= form.email_field :email %>
   </div>
-  <div>
+  <div class="authentication-element">
     <%= form.label :password %>
     <%= form.password_field :password %>
   </div>
-  <div>
+  <div id="authentication-button">
     <%= form.submit "Sign in" %>
   </div>
 <% end %>
+</div>

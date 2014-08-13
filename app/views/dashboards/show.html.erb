@@ -1,29 +1,25 @@
-<%= link_to current_user.username, current_user %>
 
-<%= link_to "Followering", :following %>
-<%= link_to "Followers", :followers %>
+<div class="form-container">
+  <div class="form-content">
+    <%= form_for @text_subject do |form| %>
+      <%= form.text_area :body, placeholder: "Compose new shout" %>
+    <%= form.submit "Shout!" %>
+  <% end %>
+  </div>
 
-<%= form_for @text_subject do |form| %>
-  <%= form.text_area :body, placeholder: "Compose new shout" %>  
-  <%= form.submit "Shout!" %>
-<% end %>
-<%= form_for @image_subject do |form| %>
-  <%= form.text_area :url, placeholder: "URL of image" %>
-  <%= form.submit %>
-<% end %>
-
-<div>
-  <h2>Dashboard</h2>
-  <ul>
-    <%= render @shouts %>
-  </ul>
-  <%= paginate @shouts%>
+  <div class="form-content">
+    <%= form_for @image_subject do |form| %>
+      <%= form.text_area :url, placeholder: "URL of image" %>
+    <%= form.submit %>
+  <% end %>
+  </div>
 </div>
-<h3><%= flash[:error]  unless flash[:error].blank? %></h3> 
-<%= form_for :search do |form| %>
-  <%= form.text_area :username, placeholder: "Search for a username" %>
-  <%= form.submit "Submit" %>
-<% end %>
-
-
-
+<div class="dashboard-container">
+  <div class="dashboard">
+    <h2>Dashboard</h2>
+    <ul>
+      <%= render @shouts %>
+    </ul>
+    <%= paginate @shouts%>
+  </div>
+</div>
