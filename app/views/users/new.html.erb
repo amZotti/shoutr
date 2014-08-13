@@ -1,6 +1,7 @@
 <div class="authentication-form">
-<%= form_for @user do |form| %>
-  <div class="authentication-element">
+  <img src="/logo.png" class="logo"/>
+  <%= form_for @user do |form| %>
+    <div class="authentication-element">
     <%= form.label :username %>
     <%= form.text_field :username %>
   </div>

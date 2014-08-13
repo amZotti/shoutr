@@ -43,12 +43,17 @@
   @include outer-container;
   background: #D5EEFB;
 
+  .logo {
+    @include shift(4);
+  }
+
   .authentication-element {
     @include span_columns(3);
     @include shift(4);
   }
-  .authentication-button {
+  #authentication-button {
    @include span_columns(3);
    @include shift(5);
   }
 }
+
