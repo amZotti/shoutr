@@ -5,17 +5,20 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Shadows+Into+Light">
 </head>
 <body>
-<% if signed_in? %>
-  <%= "Signed in as: #{current_user.email}" %>
-  <%= link_to "sign out", :session, method: :delete %>
-<% else %>
-  <%= link_to "sign in", root_path %>
-  <%= link_to "sign up", sign_up_path %>
-<% end %>
+  <header>
 
-<%= yield %>
-
+    <% if signed_in? %>
+      <%= "Signed in as: #{current_user.email}" %>
+      <%= link_to "sign out", :session, method: :delete %>
+    <% else %>
+      <%= link_to "sign in", root_path %>
+      <%= link_to "sign up", sign_up_path %>
+    <% end %>
+    <h1>SHOUTR</h1>
+  </header>
+  <%= yield %>
 </body>
 </html>

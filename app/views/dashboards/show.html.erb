@@ -1,29 +1,32 @@
+<div id="messaging">
+  <nav>
 <%= link_to current_user.username, current_user %>
-
-<%= link_to "Followering", :following %>
+<%= link_to "Following", :following %>
 <%= link_to "Followers", :followers %>
+  </nav>
 
 <%= form_for @text_subject do |form| %>
   <%= form.text_area :body, placeholder: "Compose new shout" %>  
-  <%= form.submit "Shout!" %>
+  <%= form.submit "Shout Message!" %>
 <% end %>
 <%= form_for @image_subject do |form| %>
   <%= form.text_area :url, placeholder: "URL of image" %>
-  <%= form.submit %>
+  <%= form.submit "Shout pictur!"%>
 <% end %>
 
 <div>
   <h2>Dashboard</h2>
-  <ul>
     <%= render @shouts %>
-  </ul>
   <%= paginate @shouts%>
 </div>
+
+<footer>
 <h3><%= flash[:error]  unless flash[:error].blank? %></h3> 
 <%= form_for :search do |form| %>
   <%= form.text_area :username, placeholder: "Search for a username" %>
-  <%= form.submit "Submit" %>
+  <%= form.submit "Find" %>
 <% end %>
-
+</footer>
+</div>
 
 

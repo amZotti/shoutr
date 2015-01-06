@@ -1,0 +1,71 @@
+body {
+  font-family: Helvetica, Arial, 'lucida grande', tahoma, verdana, arial, sans-serif;
+  background-color: rgb(177, 202, 213);
+}
+
+header {
+  background-color: #46629E;
+  border-bottom: 2px solid black;
+  color: white;
+  height: 50px;
+  width: 1600px;
+  position: relative;
+  top: -10px;
+  left: -10px;
+}
+
+header a {
+  color: white;
+}
+
+h1 {
+  font-family: 'Shadows Into Light', serif;
+  font-size: 40px;
+  text-align: center;
+  position: relative;
+  bottom: 20px; 
+  margin: 0 auto 0 auto;
+  width:100px;
+}
+
+#text_subject_body {
+  width: 500px;
+  height: 50px;
+  font-size: 20px;
+}
+
+#messaging {
+  background-color: #E9EAED;
+  margin: 0 auto 0 auto;
+  width: 600px;
+  height: 500px;
+  text-align: center;
+  position: relative;
+}
+
+nav {
+  padding: 20px;
+  position: relative;
+  right: 20px;
+}
+
+#shout-submit {
+  height: 300px;
+}
+
+#image_subject_url {
+  width: 500px;
+  height: 30px;
+  position: relative;
+  left: -7px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 210px;
+}
+
+#search_username {
+  width: 177px;
+  border-radius: 3px;
+}
