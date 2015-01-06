@@ -24,8 +24,14 @@ h1 {
   text-align: center;
   position: relative;
   bottom: 20px; 
+  right: 90px;
   margin: 0 auto 0 auto;
   width:100px;
+}
+
+h2 {
+  position: relative;
+  top:30px;
 }
 
 #text_subject_body {
@@ -57,7 +63,7 @@ nav {
   width: 500px;
   height: 30px;
   position: relative;
-  left: -7px;
+  left: 40px;
 }
 footer {
   position: absolute;
@@ -68,4 +74,10 @@ footer {
 #search_username {
   width: 177px;
   border-radius: 3px;
+}
+
+#shout-picture {
+  position: relative;
+  right: 258px;
+  top: 20px;
 }
